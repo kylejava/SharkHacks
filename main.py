@@ -5,13 +5,9 @@ import requests
 import time
 from functions import *
 
-consumer_key = 'FIrDvOdSdjzFnOL7JRMOgdJu5'
-consumer_secret = 'dFDf87rDZPxAW3IsQDCB4qNdnTBxGykrsiio6BCQryNWJVBSKC'
-access_token = '1334940262783598592-wzGF5Skzh7HMlWM1wjk4cPEWGWVSHT'
-access_token_secret = 'llXCxzvj7MI2LqXtASXVMTUM2qEXldqdzoM08uqZThHDF'
 
-auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
-auth.set_access_token(access_token, access_token_secret)
+auth = tweepy.OAuthHandler(s.consumer_key, s.consumer_secret)
+auth.set_access_token(s.access_token, s.access_token_secret)
 api = tweepy.API(auth)
 
 def check_id_in_file(id):
