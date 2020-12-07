@@ -1,4 +1,4 @@
-import keys as s
+import keys
 import tweepy
 import json
 import requests
@@ -6,8 +6,8 @@ import time
 from functions import *
 
 
-auth = tweepy.OAuthHandler(s.consumer_key, s.consumer_secret)
-auth.set_access_token(s.access_token, s.access_token_secret)
+auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
+auth.set_access_token(access_token, access_token_secret)
 api = tweepy.API(auth)
 
 def check_id_in_file(id):
@@ -31,12 +31,12 @@ def main():
             + pokemon['name'] + "\nPOKEDEX ENTRY: " + str(pokemon['index']) + "\nTYPES: " + pokemon['type'])
             file = "pokemon.png"
             status = api.update_with_media(file, tweet_status)
-            print("replied")
+            print("Replied to @" + mention.user.screen_name + "\n")
 
 
 
 
 while True:
     main()
-    print("waiting")
+    print("Waiting for Tweet")
     time.sleep(5)
